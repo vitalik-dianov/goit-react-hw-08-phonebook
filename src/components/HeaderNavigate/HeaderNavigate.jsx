@@ -3,7 +3,7 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { HeaderNavList, HeaderNavLink } from './HeaderNavigate.styled';
 
 export const HeaderNavigate = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn)
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <HeaderNavList>
       <li>
@@ -15,3 +15,4 @@ export const HeaderNavigate = () => {
     </HeaderNavList>
   );
 };
+ 

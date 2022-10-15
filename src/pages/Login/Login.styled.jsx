@@ -17,10 +17,8 @@ export const LoginSubmit = styled.input`
   border-color: ${p => p.theme.colors.blueLight};
   font-weight: ${p => p.theme.fontWeights.bold};
   background-color: ${p => p.theme.colors.blueLight};
-    font-size: ${p => p.theme.fontSizes['2xl']};
-    
+  font-size: ${p => p.theme.fontSizes['2xl']};
   color: ${p => p.theme.colors.yellowLight};
-
   height: ${p => p.theme.sizes[12]};
   padding: 0 ${p => p.theme.space[16]};
 `;

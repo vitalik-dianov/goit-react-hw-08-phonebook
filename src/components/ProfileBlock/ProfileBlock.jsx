@@ -3,33 +3,29 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  // MenuItemOption,
   MenuGroup,
-  // MenuOptionGroup,
-  // MenuDivider,
   Button,
 } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { authLogout } from 'redux/auth/operations';
 
 export const ProfileBlock = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
-
-    const handleLogout = () => {
-        dispatch(authLogout())
-    }
+  const handleLogout = () => {
+    dispatch(authLogout());
+  };
   return (
     <Menu>
       <MenuButton
         as={Button}
         p={0}
-        color='yellowLight'
+        color="yellowLight"
         backgroundColor="inherit"
         textTransform="uppercase"
-        fontWeight='bold'
-        _hover={{backgroundColor:'inherit'}}
-        _active={{backgroundColor:'inherit'}}
+        fontWeight="bold"
+        _hover={{ backgroundColor: 'inherit' }}
+        _active={{ backgroundColor: 'inherit' }}
       >
         Profile
       </MenuButton>
@@ -43,11 +39,6 @@ export const ProfileBlock = () => {
           <MenuItem>My Account</MenuItem>
           <MenuItem onClick={handleLogout}>Logout </MenuItem>
         </MenuGroup>
-        {/* <MenuDivider /> */}
-        {/* <MenuGroup title='Help'>
-      <MenuItem>Docs</MenuItem>
-      <MenuItem>FAQ</MenuItem>
-    </MenuGroup> */}
       </MenuList>
     </Menu>
   );

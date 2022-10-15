@@ -17,8 +17,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(authRefresh());
   }, [dispatch]);
-
-  // useEffect(()=>{},[isRefresh])
   return isRefresh ? (
     <div>Loading</div>
   ) : (

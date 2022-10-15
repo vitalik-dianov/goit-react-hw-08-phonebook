@@ -4,11 +4,8 @@ export const FilterInput = styled.input`
   font-weight: ${p => p.theme.fontWeights.bold};
   font-size: ${p => p.theme.fontSizes['xl']};
   color: ${p => p.theme.colors.blueLight};
-  
   border: 1px solid ${p => p.theme.colors.blueLight};
-    border-radius: ${p => p.theme.radii.lg};
-    
-  /* margin: 10px */
+  border-radius: ${p => p.theme.radii.lg};
   padding: ${p => p.theme.space[2]};
   width: ${p => p.theme.sizes[96]};
 `;

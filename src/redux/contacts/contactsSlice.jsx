@@ -12,18 +12,16 @@ const contactsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchAllContacts.fulfilled, (state, action) => {
-        console.log(action);
         state.items = action.payload;
       })
       .addCase(addContact.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.items.push(action.payload);
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
-        const index = state.items.findIndex(contact => 
-          contact.id === action.payload
-          );
-          state.items.splice(index, 1)
+        const index = state.items.findIndex(
+          contact => contact.id === action.payload
+        );
+        state.items.splice(index, 1);
       });
   },
 });

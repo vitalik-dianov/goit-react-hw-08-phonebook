@@ -26,3 +26,4 @@ export const Title = styled.h2`
   color: ${p => p.theme.colors.blueLight};
   margin-bottom: ${p => p.theme.space[2]};
 `;
+ 

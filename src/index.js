@@ -10,9 +10,6 @@ import { Provider } from 'react-redux';
 import { store, persistor } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-// import {theme} from '@chakra-ui/react'
-
-console.log(theme);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -28,4 +25,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-// basename="/goit-react-hw-08-phonebook/"
+

@@ -1,21 +1,26 @@
+import { Notify } from 'notiflix';
+
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { authLogin } from 'redux/auth/operations';
+import {  } from 'redux/auth/selectors';
 import { Box } from 'utils/Box';
+
 import { LoginInput, LoginSubmit, Title } from './Login.styled';
 
 export const Login = () => {
   const dispatch = useDispatch();
+  
+
   const {
     register,
     handleSubmit,
-
-    // formState: { errors },
+    formState: { errors },
   } = useForm();
 
   const onSubmit = data => {
-    // console.log(data);
     dispatch(authLogin(data));
+    
   };
 
   return (
@@ -37,16 +42,29 @@ export const Login = () => {
         <Box
           display="flex"
           flexDirection="column"
-          alignItems="center"
           gridGap={5}
+          alignItems="center"
         >
           <Box>
             <Title>Email :</Title>
-            <LoginInput type="email" {...register('email')} />
+            <LoginInput
+              type="email"
+              {...register('email', { required: true })}
+            />
+            {errors.email && Notify.warning('Email required')}
           </Box>
           <Box>
             <Title>Password :</Title>
-            <LoginInput type="password" {...register('password')} />
+
+            <LoginInput
+              type="password"
+              {...register('password', {
+                required: true,
+                minLength: 7,
+              })}
+            />
+            {errors.password &&
+              Notify.warning('Must be at least 7 characters long')}
           </Box>
           <LoginSubmit type="submit" value="LOG IN" />
         </Box>

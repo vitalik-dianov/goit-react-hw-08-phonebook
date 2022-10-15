@@ -7,12 +7,18 @@ export const FilterContacts = ({ handleChange }) => {
 
   return (
     <label htmlFor="filter">
-      <Box mr="auto" ml="auto" mb={10} display="flex" flexDirection="column"
-      alignItems="center">
+      <Box
+        mr="auto"
+        ml="auto"
+        mb={10}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
         <Title>Find contacts by name</Title>
         <FilterInput
           type="text"
-          placeholder='Enter a name:'
+          placeholder="Enter a name:"
           ref={filterRef}
           onChange={() => handleChange(filterRef.current.value)}
         />

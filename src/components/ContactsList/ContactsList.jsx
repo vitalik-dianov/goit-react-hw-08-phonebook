@@ -20,14 +20,7 @@ export const ContactsList = ({ filter }) => {
       {visibleContacts.map(contact => {
         return (
           <ListItem key={contact.id}>
-            <Box
-              display="flex"
-              flexDirection='column'
-              
-              // m={2}
-              // backgroundColor="blue.500"
-              
-            >
+            <Box display="flex" flexDirection="column">
               <Text>{`${contact.name} :`}</Text>
               <Text> {contact.number}</Text>
             </Box>

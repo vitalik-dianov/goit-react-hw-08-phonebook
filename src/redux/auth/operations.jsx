@@ -13,13 +13,12 @@ const clearAuthHeader = () => {
 export const authLogin = createAsyncThunk(
   'auth/login',
   async ({ email, password }, thunkAPI) => {
-    // console.log(email);
     try {
       const response = await axios.post('/users/login', { email, password });
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response.status);
     }
   }
 );
@@ -57,17 +56,17 @@ export const authLogout = createAsyncThunk(
 export const authRefresh = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState()
-    
-    const token = state.auth.token
+    const state = thunkAPI.getState();
+
+    const token = state.auth.token;
 
     if (!token) {
-      return thunkAPI.rejectWithValue('Unable to refresh auth')
+      return thunkAPI.rejectWithValue('Unable to refresh auth');
     }
     try {
-      setAuthHeader(token)
+      setAuthHeader(token);
       const response = await axios.get('/users/current');
-      // console.log(response);
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

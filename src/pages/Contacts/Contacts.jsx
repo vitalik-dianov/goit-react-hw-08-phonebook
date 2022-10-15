@@ -23,7 +23,6 @@ export const Contacts = () => {
 
   return (
     <Box
-      // backgroundColor='orange.500'
       display="flex"
       justifyContent="space-between"
       pr={5}
@@ -33,7 +32,6 @@ export const Contacts = () => {
       width="100%"
       minWidth="2xs"
       maxWidth="6xl"
-      // p={5}
       mt={14}
       gridGap={6}
     >
